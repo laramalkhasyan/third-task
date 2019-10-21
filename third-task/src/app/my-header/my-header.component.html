@@ -1,0 +1,41 @@
+<div class="header">
+    <div class="tabs">
+        <h2>Recipe Book</h2>
+        <h3>Recipes</h3>
+        <h3>Shopping List</h3>
+    </div>
+    <div class="manage">
+        <h3>Manage</h3>
+    </div>
+</div>
+<div>
+    <button>New Recipe</button>
+    <div class="main">
+        <app-my-recipe></app-my-recipe>
+        <div>
+            <h2>Recipe Name</h2>
+            <p class="manage-recipe">Manage Recipe</p>
+            <p>Description</p>
+            <p>Ingredients</p>
+        </div>
+    </div>
+
+</div>
+<div class="ingredients">
+    <div>
+        <p>Name</p>
+        <input type="text" [(ngModel)]="ingredientName" >
+    </div>
+    <div>
+        <p>Amount</p>
+        <input type="text" [(ngModel)]="ingredientAmount">
+    </div>
+</div>
+<div class="buttons">
+    <button class="green" (click)="add()">Add</button>
+    <button class="red" (click)="delete()">Delete</button>
+    <button class="blue" (click)="clear()">Clear</button>
+</div>
+<div class="show-ingredients" *ngFor="let item of ingredients">
+    <p>{{item.name}}({{item.amount}})</p>
+</div>
